@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/aw.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bb.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bitcoin.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bs.xml" value="0.307" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bt.xml" value="0.307" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/circleshape.xml" value="0.278" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/gradient_bg.xml" value="0.3728205128205128" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/ic_money.xml" value="0.278" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/il.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/jo.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/nu.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/nz.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/om.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pa.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pe.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pf.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pg.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/ph.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pk.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pl.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/pm.xml" value="0.194" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/layout/activity_main2.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/layout/item.xml" value="0.264" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/layout/loading_alert.xml" value="0.3625" />
+        <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/layout/simple_dropdown_item_1line.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/thegr8manef/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_dropdown_item_1line.xml" value="0.20260416666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

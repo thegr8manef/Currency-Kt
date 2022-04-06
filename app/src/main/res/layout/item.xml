@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#006064"
+    app:cardCornerRadius="15dp"
+>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp">
+
+            <!--text view for displaying our note text-->
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="0dp"
+                android:paddingLeft="10dp"
+                android:text="TND"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!--text view for displaying our last updated text-->
+            <TextView
+                android:id="@+id/value"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@id/img"
+                android:gravity="right"
+                android:text="3.9558741"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <!--imageview for displaying delete icon-->
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+
+
+                android:src="@drawable/ic_euro" />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
