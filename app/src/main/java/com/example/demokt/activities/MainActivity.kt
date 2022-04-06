@@ -27,22 +27,27 @@ class MainActivity : AppCompatActivity() {
         var currencyVM = CurrencyViewModel(this)
 
         //Log.println(Log.ASSERT,"=======//////////////////////////","1")
-
+                                 /************If the room is full with data*************/
         if (!currencyVM.callIfEmptyDB()) {
             //Log.println(Log.ASSERT,"=======//////////////////////////","2")
-
+                                /************If the device isn't connected to network*************/
             if (!isNetworkConnected()) {
                 //Log.println(Log.ASSERT,"=======//////////////////////////","3")
+                                /************call the data from room*************/
                 currencyVM.callFunDataBD()
+                                /************Alert for the connection of the network************/
                 this.showAlertIfNoConnection()
 
             } else {
                 //Log.println(Log.ASSERT,"=======//////////////////////////","4")
+                               /************get data from room************/
                 currencyVM.getData()
+                                /************spinner************/
                 this.loadingAlert()
 
             }
         } else {
+                                /************If the room is empty with data************/
             //Log.println(Log.ASSERT,"=======//////////////////////////","5")
 
             if (!isNetworkConnected()) {
@@ -52,20 +57,21 @@ class MainActivity : AppCompatActivity() {
                 this.showAlertIfNoConnection()
 
             } else {
-
+                             /************get data from API************/
                 currencyVM.getData()
                 //Log.println(Log.ASSERT,"=======//////////////////////////","7")
             }
 
 
         }
+                    /************If the user click the button of convert************/
         btn_convert.setOnClickListener {
             currencyVM.convert(base.text.toString().toDouble(), menu.text.toString())
             //Log.println(Log.ASSERT,"=======================>list",menu.text.toString())
 
         }
     }
-
+                        /*************This function show the data in listView***********/
     fun showInView(arrayWithData: ArrayList<Currency>?) {
         val adapter = CurrencyAdapter(this, arrayWithData)
         recyclerViewer.layoutManager = LinearLayoutManager(this)
@@ -75,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
+                         /*************This function show the data in list group***********/
     fun showRates(list: ArrayList<Currency>) {
         var _list = ArrayList<String>()
 
@@ -87,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         menu.setAdapter(adapter)
 
     }
-
+                        /*************this is the function of alert of the connection***********/
     fun showAlertIfNoConnection() {
         val builder = AlertDialog.Builder(this@MainActivity)
         builder.setTitle("Info")
@@ -104,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         }
         builder.show()
     }
-
+                        /*************this is the function of alert of the connection and for the room***********/
     fun showAlertIfNoConnectionNoDb() {
         val builder = AlertDialog.Builder(this@MainActivity)
         builder.setTitle("Error")
@@ -120,13 +126,13 @@ class MainActivity : AppCompatActivity() {
         }
         builder.show()
     }
-
+                         /*************this is the function to test if the device is connected or not***********/
     fun isNetworkConnected(): Boolean {
         val cm: ConnectivityManager =
             getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return cm.activeNetworkInfo != null && cm.activeNetworkInfo!!.isConnected
     }
-
+                        /*************this is the function of the spinner***********/
     fun loadingAlert() {
         var dialogView = LayoutInflater.from(this).inflate(R.layout.loading_alert, null)
         val builder = android.app.AlertDialog.Builder(this)
