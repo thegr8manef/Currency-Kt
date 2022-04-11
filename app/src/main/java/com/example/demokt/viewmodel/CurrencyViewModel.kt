@@ -4,7 +4,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.demokt.activities.MainActivity
-import com.example.demokt.data.CurrencyDatabase
+import com.example.demokt.data.local.CurrencyDatabase
 import com.example.demokt.model.Currency
 import com.example.demokt.repository.CurrencyRepository
 import kotlinx.coroutines.Dispatchers

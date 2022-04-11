@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.demokt.activities.MainActivity
-import com.example.demokt.data.CurrencyDao
-import com.example.demokt.data.CurrencyService
-import com.example.demokt.data.RetrofitHelper
+import com.example.demokt.data.local.CurrencyDao
+import com.example.demokt.data.remote.CurrencyService
+import com.example.demokt.data.remote.RetrofitHelper
 import com.example.demokt.model.Currency
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch

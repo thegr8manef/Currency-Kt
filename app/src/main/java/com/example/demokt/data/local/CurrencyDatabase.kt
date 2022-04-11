@@ -1,4 +1,4 @@
-package com.example.demokt.data
+package com.example.demokt.data.local
 
 import android.content.Context
 import androidx.room.Database

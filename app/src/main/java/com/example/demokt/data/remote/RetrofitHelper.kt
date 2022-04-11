@@ -1,4 +1,4 @@
-package com.example.demokt.data
+package com.example.demokt.data.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

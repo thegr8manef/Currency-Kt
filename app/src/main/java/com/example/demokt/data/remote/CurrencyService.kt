@@ -1,4 +1,4 @@
-package com.example.demokt.data
+package com.example.demokt.data.remote
 
 import com.example.demokt.model.Currency
 import retrofit2.Response
