@@ -18,7 +18,8 @@ class CurrencyRepository(mainActivity: MainActivity, private val currencyDao: Cu
     var _listOfcurrency: ArrayList<Currency> = arrayListOf()
     var readAllData = MutableLiveData<List<Currency>>()
 
-/******************************this function returns true if the room is empty*****************************/
+
+    /******************************this function returns true if the room is empty*****************************/
     fun isEmptyDB(): Boolean {
         var ifEmptyVar = false
         //Log.println(Log.ASSERT, "============>sizeeee",readAllData.value?.size.toString())
@@ -70,9 +71,10 @@ class CurrencyRepository(mainActivity: MainActivity, private val currencyDao: Cu
 
     }
 
- /******************************this function gets data from Room*****************************/
+
+    /******************************this function gets data from Room*****************************/
     fun getDataFromDB() {
-     /************************observe update the data of the room***********************/
+        /************************observe update the data of the room***********************/
         currencyDao.readAllData().observe(_mainActivity, Observer {
             listOfcurrency = HashMap<String, String>()
             for (item in it) {
@@ -84,6 +86,7 @@ class CurrencyRepository(mainActivity: MainActivity, private val currencyDao: Cu
             }
             if (_listOfcurrency.size == 0) {
                 _mainActivity.showAlertIfNoConnectionNoDb()
+
                 //Log.println(Log.ASSERT, "============>sizeeee", _listOfcurrency.size.toString())
             } else {
 

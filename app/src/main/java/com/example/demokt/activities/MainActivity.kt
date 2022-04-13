@@ -3,9 +3,11 @@ package com.example.demokt.activities
 import android.content.Context
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AlertDialog
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demokt.R
@@ -17,61 +19,69 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var alertDialog: android.app.AlertDialog
+    lateinit var textView1: TextView
+    lateinit var textView: TextView
+    lateinit var imageView: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        textView = findViewById<TextView>(R.id.alert)
+        textView1 = findViewById<TextView>(R.id.try_again)
+        imageView = findViewById<ImageView>(R.id.wifi_off)
         val selectedList = ArrayList<Int>()
 
         //Log.println(Log.ASSERT,"=======>database",CurrencyDatabase.getDatabase(this).toString())
         var currencyVM = CurrencyViewModel(this)
 
         //Log.println(Log.ASSERT,"=======//////////////////////////","1")
-                                 /************If the room is full with data*************/
+        /************If the room is full with data*************/
         if (!currencyVM.callIfEmptyDB()) {
             //Log.println(Log.ASSERT,"=======//////////////////////////","2")
-                                /************If the device isn't connected to network*************/
+            /************If the device isn't connected to network*************/
             if (!isNetworkConnected()) {
                 //Log.println(Log.ASSERT,"=======//////////////////////////","3")
-                                /************call the data from room*************/
+                /************call the data from room*************/
                 currencyVM.callFunDataBD()
-                                /************Alert for the connection of the network************/
-                this.showAlertIfNoConnection()
+                /************Alert for the connection of the network************/
+                //this.showAlertIfNoConnection()
 
             } else {
                 //Log.println(Log.ASSERT,"=======//////////////////////////","4")
-                               /************get data from room************/
+                /************get data from room************/
                 currencyVM.getData()
-                                /************spinner************/
+                /************spinner************/
                 this.loadingAlert()
 
             }
         } else {
-                                /************If the room is empty with data************/
+            /************If the room is empty************/
             //Log.println(Log.ASSERT,"=======//////////////////////////","5")
 
             if (!isNetworkConnected()) {
                 //Log.println(Log.ASSERT,"=======//////////////////////////","6")
 
                 currencyVM.callFunDataBD()
-                this.showAlertIfNoConnection()
+                //this.showAlertIfNoConnection()
 
             } else {
-                             /************get data from API************/
+                /************get data from API************/
                 currencyVM.getData()
                 //Log.println(Log.ASSERT,"=======//////////////////////////","7")
             }
 
 
         }
-                    /************If the user click the button of convert************/
+        /************If the user click the button of convert************/
         btn_convert.setOnClickListener {
             currencyVM.convert(base.text.toString().toDouble(), menu.text.toString())
             //Log.println(Log.ASSERT,"=======================>list",menu.text.toString())
 
         }
     }
-                        /*************This function show the data in listView***********/
+
+    /*************This function show the data in listView***********/
     fun showInView(arrayWithData: ArrayList<Currency>?) {
         val adapter = CurrencyAdapter(this, arrayWithData)
         recyclerViewer.layoutManager = LinearLayoutManager(this)
@@ -81,7 +91,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-                         /*************This function show the data in list group***********/
+
+    /*************This function show the data in list group***********/
     fun showRates(list: ArrayList<Currency>) {
         var _list = ArrayList<String>()
 
@@ -93,8 +104,8 @@ class MainActivity : AppCompatActivity() {
         menu.setAdapter(adapter)
 
     }
-                        /*************this is the function of alert of the connection***********/
-    fun showAlertIfNoConnection() {
+    /*************this is the function of alert of the connection***********/
+/*    fun showAlertIfNoConnection() {
         val builder = AlertDialog.Builder(this@MainActivity)
         builder.setTitle("Info")
         builder.setMessage("You are not Connected but you can continue .")
@@ -109,10 +120,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         builder.show()
-    }
-                        /*************this is the function of alert of the connection and for the room***********/
+    }*/
+    /*************this is the function of alert of the connection and for the room***********/
     fun showAlertIfNoConnectionNoDb() {
-        val builder = AlertDialog.Builder(this@MainActivity)
+        textView.text = "you are offline"
+        imageView.setImageResource(R.drawable.ic_wifi_off)
+        textView1.text = Html.fromHtml("<u>Try Again</u>")
+        textView1.setOnClickListener {
+            finish()
+            startActivity(intent)
+        }
+/*        val builder = AlertDialog.Builder(this@MainActivity)
         builder.setTitle("Error")
         builder.setMessage("Check your internet connection and try again.")
         builder.setCancelable(true)
@@ -124,15 +142,17 @@ class MainActivity : AppCompatActivity() {
         builder.setNegativeButton("Close the App") { dialogInterface, i ->
             finish()
         }
-        builder.show()
+        builder.show()*/
     }
-                         /*************this is the function to test if the device is connected or not***********/
+
+    /*************this is the function to test if the device is connected or not***********/
     fun isNetworkConnected(): Boolean {
         val cm: ConnectivityManager =
             getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return cm.activeNetworkInfo != null && cm.activeNetworkInfo!!.isConnected
     }
-                        /*************this is the function of the spinner***********/
+
+    /*************this is the function of the spinner***********/
     fun loadingAlert() {
         var dialogView = LayoutInflater.from(this).inflate(R.layout.loading_alert, null)
         val builder = android.app.AlertDialog.Builder(this)

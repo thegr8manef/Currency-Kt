@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class CurrencyViewModel(mainActivity: MainActivity) : AndroidViewModel(mainActivity.application) {
     private var currencyRepository: CurrencyRepository
 
+
     init {
         val currencyDao = CurrencyDatabase.getDatabase(mainActivity.application).currencyDao()
         currencyRepository = CurrencyRepository(mainActivity, currencyDao)
