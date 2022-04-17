@@ -34,7 +34,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="0dp"
                 android:paddingLeft="10dp"
-                android:text="TND"
+                android:text="@string/Base_Id_Test"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_toLeftOf="@id/img"
                 android:gravity="right"
-                android:text="3.9558741"
+                android:text="@string/Base_Value_Test"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 

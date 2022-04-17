@@ -33,7 +33,7 @@ class CurrencyAdapter(
 
             //  Log.e("Main","-------------------------"+list.get(position));
                                             /************Delete countries without flags*************/
-            if ((data.id != "BTN") && (data.id != "DOP") && (data.id != "XAF") && (data.id != "XCD") && (data.id != "XDR") && (data.id != "XOF") && (data.id != "XPF")) {
+            if ((data.id != R.string.Delete1.toString()) && (data.id != R.string.Delete2.toString()) && (data.id != R.string.Delete3.toString()) && (data.id != R.string.Delete4.toString()) && (data.id != R.string.Delete5.toString()) && (data.id != R.string.Delete6.toString()) && (data.id != R.string.Delete7.toString())) {
                                             /************Set the Flags by their first two letters of countries*************/
                 val id = context.resources.getIdentifier(
                     data.id.lowercase(Locale.ROOT).substring(0, 2),

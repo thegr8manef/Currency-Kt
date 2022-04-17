@@ -5,16 +5,25 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
+import android.view.View
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demokt.R
 import com.example.demokt.adapter.CurrencyAdapter
 import com.example.demokt.model.Currency
 import com.example.demokt.viewmodel.CurrencyViewModel
+import com.google.android.material.snackbar.BaseTransientBottomBar.*
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.time.Duration.Companion.milliseconds
+import kotlin.time.Duration.Companion.seconds
+import kotlin.time.milliseconds
+import kotlin.time.seconds
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +35,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.apply {
+            // Hide both the navigation bar and the status bar.
+            // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+            // a general rule, you should design your app to hide the status bar whenever you
+            // hide the navigation bar.
+            systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        }
         setContentView(R.layout.activity_main)
-        textView = findViewById<TextView>(R.id.alert)
         textView1 = findViewById<TextView>(R.id.try_again)
         imageView = findViewById<ImageView>(R.id.wifi_off)
         val selectedList = ArrayList<Int>()
@@ -52,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 /************get data from room************/
                 currencyVM.getData()
                 /************spinner************/
-                this.loadingAlert()
+               //this.loadingAlert()
 
             }
         } else {
@@ -75,8 +91,18 @@ class MainActivity : AppCompatActivity() {
         }
         /************If the user click the button of convert************/
         btn_convert.setOnClickListener {
-            currencyVM.convert(base.text.toString().toDouble(), menu.text.toString())
-            //Log.println(Log.ASSERT,"=======================>list",menu.text.toString())
+            try {
+                currencyVM.convert(base.text.toString().toDouble(), menu.text.toString().uppercase())
+                //Log.println(Log.ASSERT,"=======================>list",menu.text.toString())
+                val mySnackbar = Snackbar.make(findViewById(R.id.main), R.string.SnackBarProcessing, Snackbar.LENGTH_SHORT)
+                mySnackbar.setDuration(500)
+                mySnackbar.show()
+
+            }catch (e : NumberFormatException){
+                val mySnackbar = Snackbar.make(findViewById(R.id.main), R.string.SnackBarVerifing, Snackbar.LENGTH_SHORT)
+                mySnackbar.setDuration(2000)
+                mySnackbar.show()
+            }
 
         }
     }
@@ -87,8 +113,9 @@ class MainActivity : AppCompatActivity() {
         recyclerViewer.layoutManager = LinearLayoutManager(this)
         recyclerViewer.adapter = adapter
         if (isNetworkConnected()) {
-            alertDialog.dismiss()
+            //alertDialog.dismiss()
         }
+
 
     }
 
@@ -123,8 +150,7 @@ class MainActivity : AppCompatActivity() {
     }*/
     /*************this is the function of alert of the connection and for the room***********/
     fun showAlertIfNoConnectionNoDb() {
-        textView.text = "you are offline"
-        imageView.setImageResource(R.drawable.ic_wifi_off)
+        imageView.setImageResource(R.mipmap.nowifi)
         textView1.text = Html.fromHtml("<u>Try Again</u>")
         textView1.setOnClickListener {
             finish()
@@ -153,15 +179,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     /*************this is the function of the spinner***********/
-    fun loadingAlert() {
+/*    fun loadingAlert() {
         var dialogView = LayoutInflater.from(this).inflate(R.layout.loading_alert, null)
         val builder = android.app.AlertDialog.Builder(this)
             .setView(dialogView)
             .setTitle("")
             .setCancelable(true)
-
         alertDialog = builder.show()
-    }
-
-
+    }*/
 }

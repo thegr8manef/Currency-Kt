@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">DemoKt</string>
+    <string name="app_name">FlousNa</string>
+    <string name="version">1.1.1.1581</string>
+    <string name="SnackBarProcessing">Convert is processing...</string>
+    <string name="SnackBarVerifing">please verify your parameters</string>
+    <string name="TryAgain"><u>Try Again</u></string>
+    <string name="Delete1">BTN</string>
+    <string name="Delete2">DOP</string>
+    <string name="Delete3">XAF</string>
+    <string name="Delete4">XCD</string>
+    <string name="Delete5">XDR</string>
+    <string name="Delete6">XOF</string>
+    <string name="Delete7">XPF</string>
+    <string name="DBName">currency_database</string>
+    <string name="KeyAPI">latest?apikey=bglhdrskIVmmxSy6wsQVns2SvQKSfFkMCKisbgUK</string>
+    <string name="URLAPI">https://currencyapi.com/api/v2/</string>
+    <string name="Currency_List">Currency List</string>
+    <string name="Base_Value">1</string>
+    <string name="Base_Id">USD</string>
+    <string name="Base_Id_Test">TND</string>
+    <string name="Base_Value_Test">3.9558741</string>
+    <string name="loading">loading...</string>
+
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.demokt.R
 import com.example.demokt.model.Currency
 
 @Database(entities = [Currency::class], version = 1, exportSchema = false)

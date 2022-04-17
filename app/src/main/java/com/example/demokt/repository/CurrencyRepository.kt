@@ -101,9 +101,10 @@ class CurrencyRepository(mainActivity: MainActivity, private val currencyDao: Cu
     fun convert(base: Double, _base_convert: String) {
         //Log.println(Log.ASSERT, "=====>Hashmap", listOfcurrency.size.toString())
 
-        var base_convert = 0.0
+        var base_convert = 1.0
         var temp = 0.0
         var temp_convert = 0.0
+
         base_convert = (listOfcurrency.get(_base_convert)).toString().toDouble()
 
         for (rate in _listOfcurrency) {
@@ -118,6 +119,7 @@ class CurrencyRepository(mainActivity: MainActivity, private val currencyDao: Cu
             _mainActivity.showInView(_listOfcurrency)
             //Log.println(Log.ASSERT,"=====>rate",rate.id.toString())
         }
+
 
     }
 

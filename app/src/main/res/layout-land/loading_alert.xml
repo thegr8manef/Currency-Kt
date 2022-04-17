@@ -23,7 +23,7 @@
         android:layout_below="@id/progressBar"
         android:layout_centerInParent="true"
         android:paddingTop="70dp"
-        android:text="loading..."
+        android:text="@string/loading"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp" />

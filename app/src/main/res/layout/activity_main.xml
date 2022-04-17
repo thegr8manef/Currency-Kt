@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f7fcfa"
     android:orientation="vertical"
     tools:context=".activities.MainActivity"
-    tools:visibility="visible"
-    android:background="#f7fcfa">
+    tools:visibility="visible">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="44dp"
-            android:text="Currency List"
+            android:text="@string/Currency_List"
             android:textColor="#261f1f"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="number"
-            android:text="1" />
+            android:text="@string/Base_Value" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,9 +82,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:helperText=""
         android:layout_marginLeft="5dp"
         app:endIconMode="clear_text"
+        app:helperText=""
         app:helperTextTextColor="#dd0000"
         app:layout_constraintBottom_toBottomOf="@+id/textField"
         app:layout_constraintEnd_toStartOf="@+id/btn_convert"
@@ -95,54 +95,41 @@
 
         <AutoCompleteTextView
             android:id="@+id/menu"
-            android:completionThreshold="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:completionThreshold="1"
             android:inputType="none"
-            android:text="USD"
+            android:text="@string/Base_Id"
+
             android:textAlignment="center" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
 
     <ImageView
         android:id="@+id/wifi_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
 
         android:id="@+id/try_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
         android:clickable="true"
         android:text=""
         android:textAlignment="center"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/wifi_off"
-        app:layout_constraintHorizontal_bias="0.539"
-        app:layout_constraintStart_toStartOf="@+id/alert" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wifi_off"
+        app:layout_constraintVertical_bias="0.145" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewer"
