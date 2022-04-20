@@ -17,17 +17,16 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="149dp"
-        android:layout_height="58dp"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
         android:layout_below="@+id/splash"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="134dp"
-
         android:layout_marginTop="16dp"
         android:layout_marginEnd="128dp"
-        android:layout_marginBottom="191dp"
+        android:layout_marginBottom="210dp"
         android:indeterminate="true"
         android:indeterminateTint="#006064"
         android:visibility="visible" />
