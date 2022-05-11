@@ -1,16 +1,18 @@
 package com.example.demokt.activities
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.text.Html
-import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demokt.R
@@ -20,10 +22,7 @@ import com.example.demokt.viewmodel.CurrencyViewModel
 import com.google.android.material.snackbar.BaseTransientBottomBar.*
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.time.Duration.Companion.milliseconds
-import kotlin.time.Duration.Companion.seconds
-import kotlin.time.milliseconds
-import kotlin.time.seconds
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "Home"
 
         window.decorView.apply {
             // Hide both the navigation bar and the status bar.
@@ -103,8 +106,36 @@ class MainActivity : AppCompatActivity() {
                 mySnackbar.setDuration(2000)
                 mySnackbar.show()
             }
+            HideKeyboard()
+
+
 
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_help ->{
+                val intent = Intent(this,HelpActivity::class.java).apply {
+
+                }
+                startActivity(intent)
+                return true
+            }
+            R.id.action_abt ->{
+                val intent1 = Intent(this,AboutActivity::class.java).apply {
+
+                }
+                startActivity(intent1)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     /*************This function show the data in listView***********/
@@ -187,4 +218,9 @@ class MainActivity : AppCompatActivity() {
             .setCancelable(true)
         alertDialog = builder.show()
     }*/
+    fun HideKeyboard() : Boolean{
+        val imm: InputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0)
+        return true
+    }
 }

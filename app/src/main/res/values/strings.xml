@@ -20,6 +20,11 @@
     <string name="Base_Id_Test">TND</string>
     <string name="Base_Value_Test">3.9558741</string>
     <string name="loading">loading...</string>
+    <string name="about">There is no need to create a separate social channel (like separate twitter handle and Facebook page) for each and every app that you make. Doing so will not only be a burden on you but will also distribute your users in smaller chunks and make your app’s social</string>
+    <string name="Devlopper">Jedidi Med Manef</string>
+    <string name="Ocuupation">Mobile Application Development</string>
+    <string name="connect">Connect</string>
+    <string name="Copyright">© 2012 - 2022 www.mobelite.fr - All Rights Reserved.</string>
 
 
 </resources>

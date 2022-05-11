@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jedid/StudioProjects/Currency-Kt/app/src/main/res/layout/activity_about.xml" value="0.264" />
+        <entry key="..\:/Users/jedid/StudioProjects/Currency-Kt/app/src/main/res/layout/activity_help.xml" value="0.264" />
+        <entry key="..\:/Users/jedid/StudioProjects/Currency-Kt/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/jedid/StudioProjects/Currency-Kt/app/src/main/res/layout/item_list_currency.xml" value="0.25" />
+        <entry key="..\:/Users/jedid/StudioProjects/Currency-Kt/app/src/main/res/menu/main_menu.xml" value="0.25" />
         <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/aw.xml" value="0.194" />
         <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bb.xml" value="0.194" />
         <entry key="..\:/Users/thegr8manef/AndroidStudioProjects/DemoKt/app/src/main/res/drawable/bitcoin.xml" value="0.194" />
