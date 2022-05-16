@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.demokt.R
+import com.example.demokt.strings.Strings.Bar_Title_About
+import com.example.demokt.strings.Strings.Url_Fb
 import kotlinx.android.synthetic.main.activity_about.*
 import java.util.*
 
@@ -17,13 +19,13 @@ class AboutActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "About"
+        actionbar!!.title = Bar_Title_About
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
         mark_btn.setOnClickListener(View.OnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/manef.jedidi.99/"))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(Url_Fb))
             startActivity(browserIntent)
         })
 

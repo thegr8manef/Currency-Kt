@@ -4,8 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import com.example.demokt.strings.Strings.TABLE_NAME
+
 /************************set the name of the room********************/
-@Entity(tableName = "currency_table")
+@Entity(tableName = TABLE_NAME)
 data class Currency(
 
     /************************the String id is the primaryKey********************/

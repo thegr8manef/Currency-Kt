@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
@@ -18,8 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.demokt.R
 import com.example.demokt.adapter.CurrencyAdapter
 import com.example.demokt.model.Currency
+import com.example.demokt.strings.Strings.Bar_Title_Home
 import com.example.demokt.viewmodel.CurrencyViewModel
-import com.google.android.material.snackbar.BaseTransientBottomBar.*
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Home"
+        actionbar!!.title = Bar_Title_Home
 
         window.decorView.apply {
             // Hide both the navigation bar and the status bar.

@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.demokt.R
+import com.example.demokt.strings.Strings.Bar_Title_Help
+import com.example.demokt.strings.Strings.Recipient_Email
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.activity_help.*
 import kotlinx.android.synthetic.main.activity_help.view.*
@@ -22,7 +24,7 @@ class HelpActivity : AppCompatActivity() {
         //actionbar
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Help"
+        actionbar!!.title = Bar_Title_Help
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
@@ -33,7 +35,7 @@ class HelpActivity : AppCompatActivity() {
             val subject = titleOrNull.toString()
            // Log.println(Log.ASSERT,"=======================>list",titleOrNull.toString())
         sendEmailBtn.setOnClickListener {
-            val recipient = "jedidimanef@gmail.com"
+            val recipient = Recipient_Email
             val message = messageEt.text.toString().trim()
             sendEmail(recipient, subject, message)
         }
